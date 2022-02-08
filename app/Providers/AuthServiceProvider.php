@@ -43,6 +43,11 @@ class AuthServiceProvider extends ServiceProvider
             return $user->role->name === 'admin';
         });
 
+        Gate::define('manage-wards', function (User $user)
+         {
+            return $user->role->name === 'director';
+        });
+
 
     }
 }
